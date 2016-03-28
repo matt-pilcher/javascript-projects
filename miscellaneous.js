@@ -14,8 +14,8 @@ my_max([3,4,3,5,6,80]);
 // Takes a string and returns the number of vowels
 
 var vowel_count = function(string) {
-   var vowels=['A','E','I','O','U','Y'];
-   var count=0;
+   var vowels = ['A','E','I','O','U','Y'];
+   var count = 0;
     for (var i = 0; i < string.length; i++){
         if (vowels.indexOf(string[i].toUpperCase()) != -1) {
             count ++;
@@ -24,13 +24,17 @@ var vowel_count = function(string) {
     return count;
 };
 
-var reverse = function(str) {
-    var reverse='';
-    for (i=str.length-1; i>=0; i--){
-        reverse += str[i];
+// Reverses the order of a string
+
+var reverse = function(string) {
+    var reverse = '';
+    for (var i = string.length - 1; i >= 0; i--){
+        reverse += string[i];
     }
     return reverse;
 };
+
+reverse("my name is");
 
 
 
