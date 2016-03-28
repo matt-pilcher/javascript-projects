@@ -9,12 +9,14 @@
 }
 .result {
   width: 285px;
+  padding-left: 10px;
+  background: #666;
+  color: #fff;
   height: 40px;
   border: 1px solid #666;
   float: left;
   line-height: 40px;
 }
- 
 .clear,
 span {
   height: 40px;
@@ -25,3 +27,5 @@ span {
   width: 95px;
   cursor: pointer;
 }
+
+
