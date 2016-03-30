@@ -3,8 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+#frame {
+  margin-left: 50px;
+  padding: 10px 0 0 75px;
+  border-radius: 4px;
+  background: #ff4500;
+  height: 600px;
+  width: 740px;
+}
+#logo {
+  padding: 0 0 40px 175px;
+  display: block;
+  font-family: 'Dancing Script', cursive;
+  color: #ffc500;
+  font-size: 32px;
+}
 #screen {
-    margin: 10px 0 0 50px;
     background: #fff;
     height: 400px;
     width: 600px;
@@ -12,9 +26,18 @@
 .unit {
     height: 10px;
     width: 10px;
-    display: inline-block;
     float: left
 }
 .unit-draw {
-  background: blue;
+  background: #666;
  }
+.knob{
+	position: relative;
+	display: inline-block;
+	height: 80px;
+	width: 80px;
+	border-radius: 100%;
+	background: #fff;
+	margin: 20px 150px 0 90px;
+	border: 3px ridge #ccc;
+}
