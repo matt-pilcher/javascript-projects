@@ -11,7 +11,11 @@ $(document).ready(function() {
     	$(this).css('background', '#666');
     });
 
+    // Reset the screen
     $('button').click(function() {
-        $('.unit').css('background', '#fff');
+        history.go(0);
+        /* There's a better solution here than just reloading the page
+        but I'm tired so this will have to work for now */
+
     });
 });

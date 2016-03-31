@@ -3,11 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background: #191919;
   margin-top: 10px;
 }
 #frame {
+  position: relative;
   display: inline-block;
   margin-left: 50px;
   padding: 10px 0 0 75px;
@@ -15,7 +17,11 @@ body {
   background: #ff4500;
   height: 600px;
   width: 740px;
-  border-right: 5px solid brown;
+  border-right: 5px solid #a52a2a;
+
+  animation-duration: 1s;
+  -webkit-animation-name: wobble;
+  animation-name: wobble;
 
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -63,8 +69,8 @@ body {
   margin-right: 20px; 
   width: 200px;
   height: 200px;
-  background: brown;
+  background: #a52a2a;
 }
-button {
-
+.color {
+  background: #666;
 }
