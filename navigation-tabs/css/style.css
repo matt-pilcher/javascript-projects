@@ -3,3 +3,50 @@
   padding: 0;
   box-sizing: border-box;
 }
+body { 
+	background: #191919;
+	font-size: 80%; 
+	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif; 
+}
+nav {
+	padding: 50px 0 0 90px;
+	margin-bottom: 0;
+}
+#container {
+	width: 1200px;
+	height: 500px;
+	background: #fff;
+	margin: 0 20px 10px 70px;
+}
+#tabs { 
+	list-style-type: none; 
+	margin: 0 0 0 20px;  
+}
+#tabs li {
+	display: inline;
+	margin-right: 5px;
+	background: #d3d3d3;
+}
+#tabs li:hover {
+	background: #fff;
+}
+#tabs li a {
+	padding: 0 20px 0 20px;
+	text-decoration: none;
+}
+.selected {
+	color: #000; 
+	background-color: #f1f0ee; 
+	font-weight: bold; 
+	padding: 10px 30px 10px 30px;
+}
+.content { 
+	border-bottom: 1px solid #666; 
+	padding: 0.5em; 
+	background-color: #fff; 
+}
+.content.hide { 
+	display: none; 
+}
+
+
