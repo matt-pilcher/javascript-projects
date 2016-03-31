@@ -16,23 +16,24 @@ body {
   border-radius: 14px;
   background: #ff4500;
   height: 600px;
-  width: 740px;
+  width: 750px;
   border-right: 5px solid #a52a2a;
 
-  animation-duration: 1s;
+  animation-duration: 2s;
   -webkit-animation-name: wobble;
+  -moz-animation-name: wobble;
   animation-name: wobble;
 
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 #logo {
-  padding: 0 0 40px 175px;
+  padding: 0 0 30px 175px;
   display: block;
   font-family: 'Dancing Script', cursive;
-  color: #ffc500;
-  font-size: 32px;
+  color: #baff00;
+  font-size: 42px;
 }
 #screen {
   border-radius: 2px;
@@ -41,9 +42,9 @@ body {
   width: 600px;
   cursor: crosshair;
 
-  box-shadow:         inset 0 0 10px #000000;
-  -moz-box-shadow:    inset 0 0 10px #000000;
   -webkit-box-shadow: inset 0 0 10px #000000;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
   
 }
 .unit {
@@ -69,7 +70,15 @@ body {
   margin-right: 20px; 
   width: 200px;
   height: 200px;
-  background: #a52a2a;
+}
+button {
+  padding: 30px;
+  border-radius: 3px;
+  font-size: 20px;
+  background: #ff4500;
+  border: 1px solid #ff4500;
+  color: #fff;
+  cursor: pointer;
 }
 .color {
   background: #666;
