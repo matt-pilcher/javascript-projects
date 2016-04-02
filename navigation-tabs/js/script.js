@@ -13,11 +13,27 @@ window.onload = function() {
    	var pages = tabcon.getElementsByTagName("div"); 
     for (var i = 1; i < pages.length; i++) { 
       pages.item(i).style.display = "none";
-		};
+		}
 
     // Display tab after clicking
     var tabs = container.getElementsByTagName("li");
     for (var i = 0; i < tabs.length; i++) { 
-      tabs[i].onclick = // My display function name;
+      tabs[i].onclick = displayPage;
     }
+};
+
+// Starts after clicking a tab
+function displayPage() {
+  var current = this.parentNode.getAttribute("data-current");
+
+  // Remove activetabheader and hide tab
+  document.getElementById("tabHeader_" + current).removeAttribute("class");
+  document.getElementById("tabpage_" + current).style.display = "none";
+  
+  var selected = this.id.split("_")[1];
+
+  // Assign activeTabHeader and display content
+  this.setAttribute("class", "tabActiveHeader");
+  document.getElementById("tabpage_" + selected).style.display = "block";
+  this.parentNode.setAttribute("data-current", selected);
 }
