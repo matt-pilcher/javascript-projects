@@ -36,6 +36,21 @@ var reverse = function(string) {
 
 reverse("my name is");
 
+// Checks for a palindrome
+
+function palindrome(string) {
+  string.toLowerCase();
+  var reverse = string.split('').reverse().join('');
+  if (string === reverse) {
+     return true;
+  }
+  else {
+     return false;
+  }
+};
+
+console.log(palindrome('test')); // Returns false
+console.log(palindrome('refer')); // Returns true
 
 
 
