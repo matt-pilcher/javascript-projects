@@ -52,5 +52,19 @@ function palindrome(string) {
 console.log(palindrome('test')); // Returns false
 console.log(palindrome('refer')); // Returns true
 
+// Checks if a given word has letters arranged in alphabetical order
 
+function orderChecker(word) {
+  if (word == word.split('').sort().join('')) {
+    return 'IN ORDER';
+  } else if (word == word.split('').sort().reverse().join('')) {
+    return 'IN REVERSE ORDER';
+  } else {
+    return 'NOT IN ORDER';
+  }
+};
+
+orderChecker("almost"); // This word has the letters arranged alphabetically
+orderChecker("cereal"); // These letters are not
+orderChecker("wronged"); // These letters are in reverse order
 
