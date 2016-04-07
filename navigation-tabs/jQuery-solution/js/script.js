@@ -7,6 +7,6 @@ $(document).ready(function() {
 		$('.tab-content').removeClass('current');
 
 		$(this).addClass('current');
-		$("#"+tab_id).addClass('current');
+		$("#" + tab_id).addClass('current');
 	});
 });
