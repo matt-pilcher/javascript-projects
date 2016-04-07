@@ -68,3 +68,19 @@ orderChecker("almost"); // This word has the letters arranged alphabetically
 orderChecker("cereal"); // These letters are not
 orderChecker("wronged"); // These letters are in reverse order
 
+// Bubble Sort
+function bubbleSort(array) {
+   var len = array.length;
+   for (var i = len - 1; i >= 0; i--) {
+     for(var j = 1; j <= i; j++){
+       if(array[j - 1] > array[j]) {
+           var temp = array[j - 1];
+           array[j-1] = array[j];
+           array[j] = temp;
+        }
+     }
+   }
+   return array;
+}
+
+bubbleSort([7,5,2,4,3,9]);
