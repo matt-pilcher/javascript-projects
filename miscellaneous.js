@@ -69,6 +69,7 @@ orderChecker("cereal"); // These letters are not
 orderChecker("wronged"); // These letters are in reverse order
 
 // Bubble Sort
+
 function bubbleSort(array) {
    var len = array.length;
    for (var i = len - 1; i >= 0; i--) {
@@ -84,3 +85,21 @@ function bubbleSort(array) {
 }
 
 bubbleSort([7,5,2,4,3,9]);
+
+// Determine if a number is prime
+
+function prime(num) {
+    var divider = 2; 
+    
+    while (num > divider) {
+        if (num % divider === 0 ) {
+            return false;
+        } else {
+            divider++;
+        }
+    }
+    return true;
+}
+
+prime(4); // Return false
+prime(5); // Return true
