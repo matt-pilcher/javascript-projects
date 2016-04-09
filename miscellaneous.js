@@ -103,3 +103,23 @@ function prime(num) {
 
 prime(4); // Return false
 prime(5); // Return true
+
+// Find the prime factors of a number
+
+function findFactors(num) {
+  var divider = 2, 
+      factorList = [];
+  
+  while (num > 2) {
+    if (num % divider === 0) {
+       factorList.push(divider); 
+       num = num / divider;
+    }
+    else {
+      divider++;
+    }     
+  }
+  return factorList;
+}
+
+findFactors(24); // Output Array [ 2, 2, 2, 3 ]
