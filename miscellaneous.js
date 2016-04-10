@@ -123,3 +123,22 @@ function findFactors(num) {
 }
 
 findFactors(24); // Output Array [ 2, 2, 2, 3 ]
+
+// Remove duplicate numbers from an array
+
+function removeDuplicate(array) {
+  var exists = {},
+      newArray = [], 
+      element;
+
+  for(var i =0; i < array.length; i++){
+    element = array[i];
+    if (!exists[element]) {
+      newArray.push(element);
+      exists[element] = true;
+   }
+  }
+  return newArray;
+}
+
+removeDuplicate([2,4,1,5,1,2,8,2]); // Output Array [ 2, 4, 1, 5, 8 ]
