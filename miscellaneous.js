@@ -142,3 +142,22 @@ function removeDuplicate(array) {
 }
 
 removeDuplicate([2,4,1,5,1,2,8,2]); // Output Array [ 2, 4, 1, 5, 8 ]
+
+// Reverse words in a sentence
+
+function reverseWords(string) {
+ var reverse = [], 
+     wordLength = 0;
+     
+ for(var i = string.length - 1; i >= 0; i--) {
+   if (string[i] === ' ' || i === 0) {
+     reverse.push(string.substr(i, wordLength + 1));
+     wordLength = 0;
+   }
+   else
+     wordLength++;
+ }
+ return reverse.join('');
+}
+
+reverseWords('Testing if each word is reversed'); // reversed is word each if Testing
