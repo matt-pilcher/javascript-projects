@@ -161,3 +161,19 @@ function reverseWords(string) {
 }
 
 reverseWords('Testing if each word is reversed'); // reversed is word each if Testing
+
+// Find nth fibonacci number
+
+function fibonacci(num) {
+  var fib = [0, 1];
+  
+  if (num <= 2) return 1;
+
+  for (var i = 2; i <= num; i++ ) { 
+      fib[i] = fib[i-1] + fib[i-2];
+  }
+  
+ return fib[num];
+} 
+
+fibonacci(7); // Output: 13
