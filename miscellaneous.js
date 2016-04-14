@@ -189,3 +189,30 @@ function fibonacci(num) {
 }
 
 fibonacci(7); // Output: 13
+
+// Remove duplicate characters from a string
+
+function removeDuplicate(str) {
+  var length = str.length,
+      char, 
+      charCount = {}, 
+      newStr = [];
+      
+  for(var i =0; i < length; i++) {
+    char = str[i];
+    
+    if(charCount[char]) {
+      charCount[char]++;
+    }
+    else
+      charCount[char] = 1;
+  }
+  
+  for (var j in charCount) {
+    if (charCount[j] == 1)
+       newStr.push(j);
+  }
+  return newStr.join('');
+}
+
+removeDuplicate("Testing to see if this works"); // Output: Tngfhwrk
