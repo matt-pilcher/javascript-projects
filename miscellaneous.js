@@ -216,3 +216,24 @@ function removeDuplicate(str) {
 }
 
 removeDuplicate("Testing to see if this works"); // Output: Tngfhwrk
+
+
+function selectionSort(array) {
+  var min, 
+      temp, 
+      length = array.length;
+  for(var i = 0; i < length; i++) {
+    min = i;
+    for(var j = i + 1; j < length; j++) {
+       if(array[j] < array[min]) {
+          min = j;
+       }
+    }
+    temp = array[i];
+    array[i] = array[min];
+    array[min] = temp;
+  }
+  return array;
+}
+
+selectionSort([4,1,2,3,9,5]); // Output: Array [ 1, 2, 3, 4, 5, 9 ]
