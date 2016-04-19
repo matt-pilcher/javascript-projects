@@ -4,6 +4,7 @@ $(document).ready(function() {
 	var width = 720,
 			speed = 1000,
 			duration = 3000;
+			currentSlide = 1;
 
 	// Prevent jquery from requerying the dom for the element
 	var $slider = $('#slider');
@@ -12,9 +13,15 @@ $(document).ready(function() {
 
 	// Set an interval
 	setInterval(function() {
-		$slideContainer.animate({'margin-left': '-=' + width}, speed); // Animate margin-left
+		$slideContainer.animate({'margin-left': '-=' + width}, speed, function() {
+			currentSlide++;
+			if(currentSlide === $slides.length) {
+				currentSlide = 1;
+				$slideContainer.css('margin-left', 0);
+			}
+		});
 	}, duration);
-	// On the last slide, go to position 1. Add a callback
+	
 	// On mouse-enter, pause the animation
 	// Resume the animation after the mouse-leave
 })
