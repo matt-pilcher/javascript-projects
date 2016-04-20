@@ -217,6 +217,7 @@ function removeDuplicate(str) {
 
 removeDuplicate("Testing to see if this works"); // Output: Tngfhwrk
 
+// Selection Sort
 
 function selectionSort(array) {
   var min, 
@@ -237,3 +238,20 @@ function selectionSort(array) {
 }
 
 selectionSort([4,1,2,3,9,5]); // Output: Array [ 1, 2, 3, 4, 5, 9 ]
+
+// Insertion Sort
+
+function insertionSort(array) {
+  for (var i = 0; i < array.length; i++) {
+    var temp = array[i];
+    var j = i - 1;
+    while (j >= 0 && array[j] > temp) {
+      array[j + 1] = array[j];
+      j--;
+    }
+    array[j + 1] = temp;
+  }
+  return array;
+}
+
+insertionSort([ 5, 6, 4, 1, 3, 12, 4, 1]); // Output: [ 1, 1, 3, 4, 4, 5, 6, 12 ]
