@@ -255,3 +255,15 @@ function insertionSort(array) {
 }
 
 insertionSort([ 5, 6, 4, 1, 3, 12, 4, 1]); // Output: [ 1, 1, 3, 4, 4, 5, 6, 12 ]
+
+function quickSort(arr, left, right){
+   var len = arr.length, 
+       partition;
+
+    
+   //sort left and right
+   quickSort(arr, left, partition - 1);
+   quickSort(arr, partition + 1, right);
+
+  return arr;
+}
