@@ -256,14 +256,24 @@ function insertionSort(array) {
 
 insertionSort([ 5, 6, 4, 1, 3, 12, 4, 1]); // Output: [ 1, 1, 3, 4, 4, 5, 6, 12 ]
 
-function quickSort(arr, left, right){
-   var len = arr.length, 
-       partition;
+//  Combination lock
 
+var comboLock = function(n, x, y, z) {
+    var ans = (3*n) + x;
     
-   //sort left and right
-   quickSort(arr, left, partition - 1);
-   quickSort(arr, partition + 1, right);
+    if (y < x) {
+        ans = ans + (n - x) + y;
+    }
+    else {
+        ans = ans + (y - x);
+    }
+    if (z < y) {
+        ans = ans + (y - z);
+    }
+    else {
+        ans = ans + (n - z) + y;
+    }
+    return ans;
+};
 
-  return arr;
-}
+comboLock(5, 1, 2, 3); // Output: 21
