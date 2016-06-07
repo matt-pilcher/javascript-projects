@@ -1,5 +1,17 @@
+img {
+	height: 80%;
+	width: 80%;
+	min-height: 161px;
+	min-width: 108px;
+}
 .movies {
 	background: #008080;
 	border-bottom: 5px solid gray;
 	padding-top: 5%;
+}
+.pic-info {
+	min-height: 100%;
+}
+.content-header p {
+	margin-bottom: 30px;
 }
