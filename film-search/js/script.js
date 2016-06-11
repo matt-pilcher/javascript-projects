@@ -1,3 +1,9 @@
+/*  
+    I have removed the movie posters temporarily. The posters display fine when loading locally
+    however when I run this site from a server, I recieve a 403 (forbidden) error. I'm assuming this
+    is because IMDB blocks the direct linking of images from their site on other sites. 
+*/
+
 // Global var for content views
 const head = '<div class="col-md-4 col-md-offset-4 well movie"><section>'
 const foot = '</section></div>'
@@ -136,7 +142,7 @@ function createEntry(data){
 	var awards = data.Awards;
 	var rating = data.imdbRating;
 	if (data.Poster == 'N/A')
-		var poster = "Images/NA.png";
+		var poster = "img/NA.jpg";
 	else
 		var poster = data.Poster;
 
@@ -145,24 +151,25 @@ function createEntry(data){
     var header = '<header class="content-header">' + 
     				'<h2>' + title + '</h2>' + 
     				'<hr>' + 
-    				'<p class="col-md-4"><strong>Year:</strong> <em>' + year + '</em></p>' + 
-    				'<p class="col-md-4"><strong>Runtime:</strong> <em>' + runtime + '</em></p>' + 
-    				'<p class="col-md-4"><strong>Rating:</strong> <em>' + rating + '</em></p>'
+    				'<p class="col-md-4"><strong>Year: </strong> <em>' + year + '</em></p>' + 
+    				'<p class="col-md-4"><strong>Time:</strong> <em>' + runtime + '</em></p>' + 
+    				'<p class="col-md-4"><strong>Rating: </strong> <em>' + rating + '</em></p>' +
     			'</header>';
 
-    // Displays the picture and creates the main div
+    
+    /* I have removed the movie posters temporarily. The posters display fine when loading locally
+    however when I run this site from a server, I recieve a 403 (forbidden) error. I'm assuming this
+    is because IMDB doesn't allow sites to hotlink. */
     var aside = '<div">' + 
-    				'<aside class="pull-left text-left col-md-5 pic-info">' + 
-    					'<img src="' + poster + '">' +
-    					'<p class="col-md-offset-2"><strong>imdbRating:</strong>' + rating + '</p>' +
+    				'<aside class="temp removed">' + 
     				'</aside>';
     
     // Main body of the div in aside
     var body = '<div class="text-left">' + 
-    		   		'<p><strong>Plot:</strong>' + plot + '</p>' +
-       	       		'<p><strong>Genre:</strong>' + genre + '</p>' +
-       	       		'<p><strong>Language:</strong>' + language + '</p>' +
-       	       		'<p><strong>Awards:</strong>' + awards + '</p>' +
+    		   		'<p><strong>Plot: </strong>' + plot + '</p>' +
+       	       		'<p><strong>Genre: </strong>' + genre + '</p>' +
+       	       		'<p><strong>Language: </strong>' + language + '</p>' +
+       	       		'<p><strong>Awards: </strong>' + awards + '</p>' +
        	       '</div>'
        	     '</div>'
     
