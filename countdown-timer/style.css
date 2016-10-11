@@ -1,0 +1,11 @@
+#counter-container {
+  text-align: center;
+  border: 1px solid #eee;
+  background: #eee;
+  font-family: sans-serif;
+}
+#counter-header{
+  color: #008080;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+}
