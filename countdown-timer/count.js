@@ -1,6 +1,5 @@
 // Change this date to the prefered deadline
-var date = '2016-11-01';
-
+var date = '2016-10-24';
 
 function remainingTime(deadline) {
   var total = Date.parse(deadline) - Date.parse(new Date()); // Parse method returns milliseconds since 1970-01-01
@@ -19,18 +18,30 @@ function remainingTime(deadline) {
 }
 
 function initializeCounter(id, deadline) {
-  var counterDiv = document.getElementById(id); // This var keeps the function from repeatedly querying the dom
-  var timer = setInterval(function() {
+  var counter = document.getElementById(id); // This var keeps the function from repeatedly querying the dom
+
+  var days = counter.querySelector('.days');
+  var hours = counter.querySelector('.hours');
+  var minutes = counter.querySelector('.minutes');
+  var seconds = counter.querySelector('.seconds');
+
+
+  function updateCounter() {
     var n = remainingTime(deadline);
-    counterDiv.innerHTML = 'Days: ' + n.days + '<br>' +
-                        'Hours: '+ n.hours + '<br>' +
-                        'Minutes: ' + n.minutes + '<br>' +
-                        'Seconds: ' + n.seconds;
+
+    days.innerHTML = n.days;
+    hours.innerHTML = n.hours;
+    minutes.innerHTML = n.minutes;
+    seconds.innerHTML = n.seconds;
+
     // Stop the timer after reaching the date
     if(n.total <= 0) {
       clearInterval(timer);
     }
-  },1000); // 1000 milliseconds == 1 second
+  }
+
+  updateCounter(); 
+  var timer = setInterval(updateCounter,1000);
 }
 
 initializeCounter('counter', date);
