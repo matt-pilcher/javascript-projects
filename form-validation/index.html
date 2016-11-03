@@ -1,22 +1,23 @@
 <form action="#" method="post" onsubmit="return formValidator()">
   First Name <input type="text" name="fname" id="fname" class="all">
   Last Name <input type="text" name="lname" id="lname">
-  Email <input type="text" name="fname" id="fname">
-  Password <input type="text" name="fname" id="fname">
+  Email <input type="text" name="email" id="email">
+  Password <input type="password" name="pass" id="pass">
   <input type="submit" value="Sign Up">
 </form>
 
 <script>
   function formValidator() {
-  var fname = document.getElementById('fname').value;
-  var lname = document.getElementById('lname').value;
-  
-  if(fname=="" || lname=="") {
-    alert('Please enter valid name');
-    return false;
-  } else {
-    return true;
-  }  
-}
-  
+    var fname = document.getElementById('fname').value;
+    var lname = document.getElementById('lname').value;
+    var email = document.getElementById('email').value;
+    var pass = document.getElementById('pass').value;
+    
+    if(fname=="" || lname=="" || email=="" || pass=="") {
+      alert('Please fill out every field');
+      return false;
+    } else {
+      return true;
+    }  
+  }
 </script>
