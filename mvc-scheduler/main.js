@@ -1,23 +1,32 @@
 
 var itinerary = {
-  list: ['item 1','item 2', 'item 3', 'item 4'],
+  list: [],
   
   displayList: function() {
     console.log('My List: ', this.list);
   },
   
   addItem: function(item) {
-    this.list.push(item);
+    this.list.push({
+      item: item,
+      completed: false
+    });
     this.displayList();
   },
   
-  changeItem: function(pos, newVal) {
-    this.list[pos] = newVal;
+  changeItem: function(pos, newItem) {
+    this.list[pos].item = newItem;
     this.displayList();
   },
   
   deleteItem: function(pos) {
     this.list.splice(pos, 1);
+    this.displayList();
+  },
+  
+  toggleCheckbox: function(pos) {
+    var item = this.list[pos];
+    item.completed = !item.completed;
     this.displayList();
   }
 };
@@ -30,3 +39,4 @@ var itinerary = {
 // It should have a way to change an item
 
 // It should have a way to delete an item
+
