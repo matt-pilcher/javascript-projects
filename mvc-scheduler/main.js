@@ -3,7 +3,18 @@ var itinerary = {
   list: [],
   
   displayList: function() {
-    console.log('My List: ', this.list);
+    if (this.list.length === 0) {
+      console.log('No tasks scheduled for today');
+    } else {
+      console.log('Itinerary: ');
+      for (var i = 0; i < this.list.length; i++) {
+        if (this.list[i].completed === true) {
+          console.log('(x)', this.list[i].item);
+        } else { 
+          console.log('( )',this.list[i].item);
+        }
+      }
+    }
   },
   
   addItem: function(item) {
