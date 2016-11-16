@@ -39,6 +39,28 @@ var itinerary = {
     var item = this.list[pos];
     item.completed = !item.completed;
     this.displayList();
+  },
+  
+  toggleAll: function() {
+    var totalItems = this.list.length;
+    var completedItems = 0;
+    
+    for (var i = 0; i < totalItems; i++) {
+      if(this.list[i].completed === true) {
+        completedItems++;
+      }
+    }
+    
+    // If all items are true, make them false
+    if (completedItems === totalItems) {
+      for (var i = 0; i < totalItems; i++) {
+        this.list[i].completed = false;
+      }
+    }
+    else {
+      // Make them true
+    }
+    
   }
 };
 // It should have a place to store items
