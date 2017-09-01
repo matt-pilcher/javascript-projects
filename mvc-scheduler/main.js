@@ -57,10 +57,15 @@ var itinerary = {
         this.list[i].completed = false;
       }
     }
-    else {
-      // Make them true
-    }
     
+    // If false, make them true
+    else { 
+      for (var i = 0; i < totalItems; i++) {
+        this.list[i].completed = true;
+      }
+      
+    }
+    this.displayList();
   }
 };
 // It should have a place to store items
