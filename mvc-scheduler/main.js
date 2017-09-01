@@ -68,13 +68,30 @@ var itinerary = {
     this.displayList();
   }
 };
-// It should have a place to store items
 
-// It should have a way to display a list
+var events = {
+  displayList: function() {
+    itinerary.displayList();
+  },
+  toggleList: function() {
+    itinerary.toggleAll();
+  }
+}
 
-//It should have a way to add an item
+/* Old code after refactoring event handlers
 
-// It should have a way to change an item
+var displayListButton = document.getElementById('displayListButton');
 
-// It should have a way to delete an item
+displayListButton.addEventListener('click', function() {
+  itinerary.displayList();
+});
+
+var toggleListButton = document.getElementById('toggleListButton');
+
+toggleListButton.addEventListener('click', function () {
+  itinerary.toggleAll();
+});
+
+*/
+
 
