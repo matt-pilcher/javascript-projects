@@ -1,4 +1,3 @@
-
 var itinerary = {
   list: [],
   
@@ -73,10 +72,34 @@ var events = {
   displayList: function() {
     itinerary.displayList();
   },
+  addItem: function() {
+    var userItem = document.getElementById('userItem');
+    itinerary.addItem(userItem.value);
+    userItem.value = '';
+  },
+  changeItem: function() {
+    var itemPos = document.getElementById('changeItemPosInput');
+    var changeItem = document.getElementById('changeItemInput');
+    
+    itinerary.changeItem(itemPos.valueAsNumber, changeItem.value);
+    
+    itemPos='';
+    changeItem='';
+  },
+  deleteItem: function() {
+    var deleteItem = document.getElementById('deleteItemInput');
+    itinerary.deleteItem(deleteItem.valueAsNumber);
+    deleteItem = '';
+  },
+  toggleItem: function() {
+    var toggleItem = document.getElementById('toggleItemInput');
+    itinerary.toggleCheckbox(toggleItem.valueAsNumber);
+    toggleItem = '';
+  },
   toggleList: function() {
     itinerary.toggleAll();
   }
-}
+};
 
 /* Old code after refactoring event handlers
 
@@ -93,5 +116,3 @@ toggleListButton.addEventListener('click', function () {
 });
 
 */
-
-
