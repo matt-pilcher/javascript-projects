@@ -1,43 +1,26 @@
+
+// This object handles the methods for the functionality of the app
 var itinerary = {
   list: [],
-  
-  displayList: function() {
-    if (this.list.length === 0) {
-      console.log('No tasks scheduled for today');
-    } else {
-      console.log('Itinerary: ');
-      for (var i = 0; i < this.list.length; i++) {
-        if (this.list[i].completed === true) {
-          console.log('(x)', this.list[i].item);
-        } else { 
-          console.log('( )',this.list[i].item);
-        }
-      }
-    }
-  },
   
   addItem: function(item) {
     this.list.push({
       item: item,
       completed: false
     });
-    this.displayList();
   },
   
   changeItem: function(pos, newItem) {
     this.list[pos].item = newItem;
-    this.displayList();
   },
   
   deleteItem: function(pos) {
     this.list.splice(pos, 1);
-    this.displayList();
   },
   
   toggleCheckbox: function(pos) {
     var item = this.list[pos];
     item.completed = !item.completed;
-    this.displayList();
   },
   
   toggleAll: function() {
@@ -64,55 +47,69 @@ var itinerary = {
       }
       
     }
-    this.displayList();
   }
 };
 
+// This object controls the event handlers for user interaction
 var events = {
-  displayList: function() {
-    itinerary.displayList();
-  },
   addItem: function() {
     var userItem = document.getElementById('userItem');
     itinerary.addItem(userItem.value);
     userItem.value = '';
+    view.displayList();
   },
+  
   changeItem: function() {
     var itemPos = document.getElementById('changeItemPosInput');
     var changeItem = document.getElementById('changeItemInput');
     
     itinerary.changeItem(itemPos.valueAsNumber, changeItem.value);
     
-    itemPos='';
-    changeItem='';
+    itemPos.value = '';
+    changeItem.value = '';
+    view.displayList();
   },
+  
   deleteItem: function() {
     var deleteItem = document.getElementById('deleteItemInput');
     itinerary.deleteItem(deleteItem.valueAsNumber);
-    deleteItem = '';
+    deleteItem.value = '';
+    view.displayList();
   },
+  
   toggleItem: function() {
     var toggleItem = document.getElementById('toggleItemInput');
     itinerary.toggleCheckbox(toggleItem.valueAsNumber);
-    toggleItem = '';
+    toggleItem.value = '';
+    view.displayList();
   },
+  
   toggleList: function() {
     itinerary.toggleAll();
+    view.displayList();
   }
 };
 
-/* Old code after refactoring event handlers
-
-var displayListButton = document.getElementById('displayListButton');
-
-displayListButton.addEventListener('click', function() {
-  itinerary.displayList();
-});
-
-var toggleListButton = document.getElementById('toggleListButton');
-
-toggleListButton.addEventListener('click', function () {
-  itinerary.toggleAll();
-});
-
-*/
+// This object handles displaying output to the DOM
+var view = {
+  displayList: function() {
+    var listUl = document.querySelector('ul');
+    listUl.innerHTML = '';
+    
+    for (var i = 0; i < itinerary.list.length; i++) {
+      var listLi = document.createElement('li');
+      var listItem = itinerary.list[i];
+      var itemStatus = '';
+      
+      if (listItem.completed === true) {
+        itemStatus = '(x) ' + listItem.item;
+      } 
+      else {
+        itemStatus = '( ) ' + listItem.item;
+      }
+      
+      listLi.textContent = itemStatus;
+      listUl.appendChild(listLi);
+    }
+  }
+};
