@@ -57,7 +57,7 @@ function ajaxSearch(id){
 	$.ajax({
  
     	// Request URL
-    	url: "http://www.omdbapi.com/?i=" + id + "&r=json",
+    	url: "http://www.omdbapi.com/?i=" + id + "&r=json&apikey=6e2e4f34",
  
     	// Determine POST or GET request
     	type: "GET",
