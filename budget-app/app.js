@@ -18,8 +18,26 @@ var budgetController = (function () {
 	return {
 		// Public Method
 		calculate: function(b) {
-			console.log(add(b));
+			return add(b);
 		}
 	}
 
 })();
+
+var viewController = (function() {
+
+
+
+})();
+
+var appController = (function(budgetC, viewC) {
+	var result = budgetC.calculate(4);
+
+	return {
+		publicMethod: function() {
+			console.log(result);
+		}
+	}
+
+
+})(budgetController, viewController);
