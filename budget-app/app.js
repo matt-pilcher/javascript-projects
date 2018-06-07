@@ -31,13 +31,20 @@ var viewController = (function() {
 })();
 
 var appController = (function(budgetC, viewC) {
-	var result = budgetC.calculate(4);
 
-	return {
-		publicMethod: function() {
-			console.log(result);
-		}
+	var addItem = function() {
+		console.log("testing")
+
 	}
+
+	document.querySelector('.addItem').addEventListener('click', addItem);
+
+	document.addEventListener('keypress', function(event) {
+		if (event.keyCode === 13) {
+			addItem()
+		}
+
+	});
 
 
 })(budgetController, viewController);
