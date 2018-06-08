@@ -7,42 +7,58 @@ with the module design pattern
 
 var budgetController = (function () {
 
-	// Private Variable
-	var x = 24;
+	
+})();
 
-	// Private Method
-	var add = function(a) {
-		return x + a;
-	}
+var viewController = (function() {
+
+	// Adding all class names to this object
+	var classList = {
+		inputType: '.fund-type',
+		inputDescription: '.fund-description',
+		inputValue: '.fund-amount',
+		inputSubmit: '.addFunds'
+	};
 
 	return {
-		// Public Method
-		calculate: function(b) {
-			return add(b);
+		
+		// Retrieve user input
+		getInput: function() {
+			return {
+				fundType: document.querySelector(classList.inputType).value,
+				fundDescription: document.querySelector(classList.inputDescription).value,
+				fundValue: document.querySelector(classList.inputValue).value
+			} 
+
+		},
+
+		// Makes the class list available to all controllers
+		getClassList: function() {
+			return classList;
+
 		}
 	}
 
 })();
 
-var viewController = (function() {
-
-
-
-})();
-
 var appController = (function(budgetC, viewC) {
-
+	
+	// Retrieve class list from the view controller
+	var classes = viewC.getClassList()
+	
+	// Retrieve input data from the view controller
 	var addItem = function() {
-		console.log("testing")
-
+		var input = viewC.getInput();
+		console.log(input);
 	}
 
-	document.querySelector('.addItem').addEventListener('click', addItem);
+	document.querySelector(classes.inputSubmit).addEventListener('click', addItem);
 
 	document.addEventListener('keypress', function(event) {
 		if (event.keyCode === 13) {
 			addItem()
 		}
+
 
 	});
 
