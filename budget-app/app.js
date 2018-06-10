@@ -18,6 +18,8 @@ var viewController = (function() {
 		inputDescription: '.fund-description',
 		inputValue: '.fund-amount',
 		inputSubmit: '.addFunds'
+
+
 	};
 
 	return {
@@ -42,9 +44,21 @@ var viewController = (function() {
 })();
 
 var appController = (function(budgetC, viewC) {
+
+	var eventInit = function() {
+
+		// Retrieve class list from the view controller
+		var classes = viewC.getClassList()
+
+		document.querySelector(classes.inputSubmit).addEventListener('click', addItem);
+
+		document.addEventListener('keypress', function(event) {
+			if (event.keyCode === 13) {
+				addItem()
+			}
+		});
+	}
 	
-	// Retrieve class list from the view controller
-	var classes = viewC.getClassList()
 	
 	// Retrieve input data from the view controller
 	var addItem = function() {
@@ -52,15 +66,12 @@ var appController = (function(budgetC, viewC) {
 		console.log(input);
 	}
 
-	document.querySelector(classes.inputSubmit).addEventListener('click', addItem);
-
-	document.addEventListener('keypress', function(event) {
-		if (event.keyCode === 13) {
-			addItem()
+	return {
+		init: function() {
+			console.log('Initializing');
+			eventInit();
 		}
-
-
-	});
-
-
+	}
 })(budgetController, viewController);
+
+appController.init();
