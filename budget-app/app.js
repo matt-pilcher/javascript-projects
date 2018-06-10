@@ -74,4 +74,5 @@ var appController = (function(budgetC, viewC) {
 	}
 })(budgetController, viewController);
 
+
 appController.init();
