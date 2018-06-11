@@ -7,7 +7,25 @@ with the module design pattern
 
 var budgetController = (function () {
 
-	
+	var expenseList = [];
+	var incomeList = [];
+	var total = 0;
+
+	// Adding prototypes for methods later
+
+	var Expense = function(id, description, value) {
+		this.id = id;
+		this.description = description;
+		this.value = value;
+
+	};
+
+	var Income = function(id, description, value) {
+		this.id = id;
+		this.description = description;
+		this.value = value;
+
+	};
 })();
 
 var viewController = (function() {
@@ -73,6 +91,5 @@ var appController = (function(budgetC, viewC) {
 		}
 	}
 })(budgetController, viewController);
-
 
 appController.init();
