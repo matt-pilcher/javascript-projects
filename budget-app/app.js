@@ -7,9 +7,17 @@ with the module design pattern
 
 var budgetController = (function () {
 
-	var expenseList = [];
-	var incomeList = [];
-	var total = 0;
+	var data = {
+		itemList: {
+			expense: [],
+			income: []
+		},
+
+		results: {
+			expense: 0,
+			income: 0
+		}
+	}
 
 	// Adding prototypes for methods later
 
@@ -26,6 +34,12 @@ var budgetController = (function () {
 		this.value = value;
 
 	};
+
+	return {
+		addItem: function(type, des, val) {
+			// new Expense()
+		}
+	}
 })();
 
 var viewController = (function() {
