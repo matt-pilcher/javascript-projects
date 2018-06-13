@@ -37,7 +37,20 @@ var budgetController = (function () {
 
 	return {
 		addItem: function(type, des, val) {
-			// new Expense()
+			var newItem, ID;
+
+			ID = 0;
+
+
+			if (type === 'expense') {
+				newItem = new Expense(ID, des, val)
+			} else if (type === 'income') {
+				newItem = new Income(ID, des, val)
+			}
+
+			// data.itemList[type].push(newItem)
+
+			
 		}
 	}
 })();
