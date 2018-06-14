@@ -39,18 +39,30 @@ var budgetController = (function () {
 		addItem: function(type, des, val) {
 			var newItem, ID;
 
-			ID = 0;
+			// Create a unique id for each item
+			if (data.itemList[type].length > 0) {
+				// Create new id based on the last in the array
+				ID = data.itemList[type][data.itemList[type].length -1].id + 1;
+			} else {
+				ID = 0;
+			}
+			
 
-
+			// Determine fund type
 			if (type === 'expense') {
 				newItem = new Expense(ID, des, val)
 			} else if (type === 'income') {
 				newItem = new Income(ID, des, val)
 			}
 
-			// data.itemList[type].push(newItem)
+			data.itemList[type].push(newItem)
+			return newItem;
 
 			
+		},
+
+		test: function() {
+			console.log(data);
 		}
 	}
 })();
@@ -107,8 +119,11 @@ var appController = (function(budgetC, viewC) {
 	
 	// Retrieve input data from the view controller
 	var addItem = function() {
-		var input = viewC.getInput();
-		console.log(input);
+		var input, newItem;
+
+		input = viewC.getInput();
+		
+		newItem = budgetC.addItem(input.fundType, input.fundDescription, input.fundValue)
 	}
 
 	return {
