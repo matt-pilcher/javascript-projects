@@ -5,6 +5,17 @@ with the module design pattern
 
 */
 
+/*
+
+// Initialize the app controller which calls the budget and view controllers
+// The eventInit function asks the view to return the class list from the html and then adds an event listener to the button
+// The view returns the user input values and the appController sends the data to the budget controller
+// Function constructors create new objects from the user input
+// The object is inserted into an array based on type
+// The data object is private and stores all of the values
+
+*/
+
 var budgetController = (function () {
 
 	var data = {
@@ -83,6 +94,8 @@ var viewController = (function() {
 		
 		// Retrieve user input
 		getInput: function() {
+
+			// The query selector refrences the classList object
 			return {
 				fundType: document.querySelector(classList.inputType).value,
 				fundDescription: document.querySelector(classList.inputDescription).value,
@@ -107,8 +120,8 @@ var appController = (function(budgetC, viewC) {
 		// Retrieve class list from the view controller
 		var classes = viewC.getClassList()
 
+		// Need to refactor this
 		document.querySelector(classes.inputSubmit).addEventListener('click', addItem);
-
 		document.addEventListener('keypress', function(event) {
 			if (event.keyCode === 13) {
 				addItem()
@@ -121,6 +134,7 @@ var appController = (function(budgetC, viewC) {
 	var addItem = function() {
 		var input, newItem;
 
+		// Stores user input values
 		input = viewC.getInput();
 		
 		newItem = budgetC.addItem(input.fundType, input.fundDescription, input.fundValue)
@@ -135,3 +149,4 @@ var appController = (function(budgetC, viewC) {
 })(budgetController, viewController);
 
 appController.init();
+
