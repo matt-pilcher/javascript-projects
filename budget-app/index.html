@@ -5,35 +5,41 @@
 	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 
-	  <!--css styles starts-->
+	  
 	  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 	  <link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 
 	<body>
 		<header>
-			<h1>Available Funds:</h1>
-			
+			<nav>
+				<ul>
+					<li></li>
+				</ul>
+			</nav>			
 		</header>
 
-		<section>
-			<select class="fund-type">
-          <option value="income" selected>Income</option>
-          <option value="expense">Expenses</option>
-      </select>
-      <input type="text" class="fund-description" placeholder="Description">
-      <input type="number" class="fund-amount" placeholder="Value">
-			<button class="addFunds">Add</button>
+		<section class="container">
+				<select class="fund-type">
+         <option value="income" selected>Income</option>
+         <option value="expense">Expenses</option>
+	      </select>
 
+	      <input type="text" class="fund-description" placeholder="Description">
+	      <input type="number" class="fund-amount" placeholder="Value">
+
+				<button class="addFunds">Add</button>
 		</section>
 
-		<section class="expenses">
-			<h3>Expenses</h3>
-		</section>
+		<div class="grid">
+			<section class="expenses col-1-2">
+				<h3>Expenses</h3>
+			</section><!--
 
-		<section class="income">
-			<h3>Income</h3>
-		</section>
+		--><section class="income col-1-2">
+				<h3>Income</h3>
+			</section>
+		</div>
 
 
 
