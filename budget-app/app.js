@@ -1,7 +1,11 @@
 /* 
 
 This will be a small budget application built 
-with the module design pattern
+with the module design pattern.
+
+*** Still need to add a method for appending values to the dom. The app controller
+needs refactoring. I don't like the event listener setup. Need to complete the
+design of the app as well. ***
 
 */
 
@@ -30,7 +34,7 @@ var budgetController = (function () {
 		}
 	}
 
-	// Adding prototypes for methods later
+	// Adding prototypes for these methods later
 
 	var Expense = function(id, description, value) {
 		this.id = id;
